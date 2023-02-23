@@ -1,45 +1,20 @@
-# Module Two final project
+# Shopping Cart API
 
-The Module Two final project is an opportunity to apply the programming skills and knowledge you've learned in this module. In particular, you'll demonstrate the following:
-
-* Using the DAO pattern to access data in a SQL database
-* Writing code to get data from a REST API
-* Implementing server-side code to create a RESTful API
-* Using Auth to control access to REST API endpoints
-
-## Application
-
-In this project you'll build a REST API to support an e-commerce shopping cartItem.
-
-The [Requirements](#requirements) section later in this document describes the endpoints needed.
+This project is a REST API that supports an online shopping cartItem.
 
 ## Database setup
 
-To run the application, you must first create the `m2_final_project` database. Then run the `database/m2_final_project.sql` script to create the tables with some test users and data.
+Included is a test database which will need to be created prior to running the application. 
 
 > Note: The script creates two users for use in testing, `user` and `admin`, which both have the password: `password`.
 
-![Database schema](./database/m2_final_project_ERD.drawio.png)
+![Database schema](./database/test_db_ERD.png)
 
-## Starting code
 
-Begin by opening the Module Two final project in IntelliJ and reviewing the starting code.
+## Features
 
-The project contains code to support user authentication. This code includes Javadoc comments to explain the purpose of the classes and methods.
+### Login Information:
 
-## Requirements
-
-The requirements are for a RESTful web API only. There are no requirements for a user interface. Perform testing of the required endpoints by using Postman.
-
-There are three groupings of requirements:
-
-- **Provided**: documents the provided features in the starter code
-- **Required**: features required to successfully complete the project
-- **Bonus**: optional work that allows you to extend the project to further develop your skills
-
-### Provided
-
-Use cases:
 1. As a user of the system, I need to be able to register myself with a username, address information, and password.
 1. As a user of the system, I need to be able to log in using my registered username and password.
 
@@ -47,7 +22,7 @@ API endpoints:
 1. POST `/register` (Provided Use Case 1)
 1. POST `/login` (Provided Use Case 2)
 
-### Required
+### Cart Functionality:
 
 Use cases:
 1. As an unauthenticated user, I can see a list of products for sale.
@@ -68,15 +43,15 @@ Use cases:
 1. As a user I can clear my cartItem, removing all the items from the cartItem.
 
 API endpoints:
-1. GET `/products` - get the list of products (Required Use Case 1)
-1. GET `/products?sku={product_sku}&name={product_name}` - search for products (Required Use Case 2)
-1. GET `/products/{id}` - get a single product (Required Use Case 3)
-1. GET `/cartItem` - get the user's cartItem (Required Use Case 4)
-1. POST `/cartItem/items` - add item to cartItem (Required Use Case 5)
-1. DELETE `/cartItem/items/{itemId}` - remove item from cartItem (Required Use Case 6)
-1. DELETE `/cartItem` - clear cartItem (Required Use Case 7)
+1. GET `/products` - get the list of products (Use Case 1)
+1. GET `/products?sku={product_sku}&name={product_name}` - search for products (Use Case 2)
+1. GET `/products/{id}` - get a single product (Use Case 3)
+1. GET `/cartItem` - get the user's cartItem (Use Case 4)
+1. POST `/cartItem/items` - add item to cartItem (Use Case 5)
+1. DELETE `/cartItem/items/{itemId}` - remove item from cartItem (Use Case 6)
+1. DELETE `/cartItem` - clear cartItem (Use Case 7)
 
-### Bonus (Optional)
+### Wishlists:
 
 Use cases:
 1. As a user, I can see a list of all of my wishlists.
@@ -87,10 +62,9 @@ Use cases:
 1. As a user, I can remove a product from a wishlist that I own. If the item isn't in the wishlist, it's not deleted, but no error is raised.
 
 API endpoints:
-1. GET `/wishlists` - get user wishlists (Bonus Use Case 1)
-1. GET `/wishlists/{wishlistId}` - get wishlist (Bonus Use Case 2)
-1. POST `/wishlists` - create wishlist (Bonus Use Case 3)
-1. DELETE `/wishlists/{wishlistId}` - delete wishlist (Bonus Use Case 4)
-1. POST `/wishlists/{wishlistId}/products/{productId}` - add product to wishlist (Bonus Use Case 5)
-1. DELETE `/wishlists/{wishlistId}/products/{productId}` - remove product from wishlist (Bonus Use Case 6)
-# cartAPI
+1. GET `/wishlists` - get user wishlists (Use Case 1)
+1. GET `/wishlists/{wishlistId}` - get wishlist (Use Case 2)
+1. POST `/wishlists` - create wishlist (Use Case 3)
+1. DELETE `/wishlists/{wishlistId}` - delete wishlist (Use Case 4)
+1. POST `/wishlists/{wishlistId}/products/{productId}` - add product to wishlist (Use Case 5)
+1. DELETE `/wishlists/{wishlistId}/products/{productId}` - remove product from wishlist (Use Case 6)
